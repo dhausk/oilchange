@@ -5,14 +5,14 @@ function Splash(params) {
   return (
     < section className="" >
       <h1 className="">Oil Change</h1>
-      <p>When did I do that again?</p>
-      <p>If you have have ever asked your self this question, you are not alone. We've all looked in
-      our glove box at the owners manual or on the windshield to remind us. What if you did not
-      have to go out into the cold or burning hot car and do that instead pull out your phone and
-      look it up right where you sit? Oil change is all you need to do. Just pick out which car is yours
-      and we will pull up the last time you did any service to your car. We even give you charts to show how often
-        you perform your maintenance. It is simple to use, fill out a form and we will do the rest. Every time
-        you do an oil change just fill out the maintenance form and we will keep a record of it for yous.</p>
+      <p>If you have ever forgotten when you changed the oil, simply ran out of room or lost your
+      maintenance log book. Dont worry you are not alone, and fortunately there is Oil Change, an
+      app that will be the maintenance log book in your pocket. All you need to do. Just pick out
+      or add your  car, and we will pull up the last time you did any service to your car. Here
+      you can view, add, edit, or delete your maintenance logs. We also show you charts of your
+      data to give a time line of when you last did your maintenance and the frequency. It is simple
+      to use, fill out a form and we will do the rest. Do an oil change? Change the air Filter?
+      Just fill out another form an we will keep a record for you.</p>
       <button>
         <Link to="/Cars">Begin</Link>
       </button>

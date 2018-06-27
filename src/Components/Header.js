@@ -10,7 +10,9 @@ function Header(params) {
         <p>When did I do that again?</p>
       </div>
       <nav>
-        <Link to="/About">Begin your adventure!</Link>
+        <Link to="/About">About</Link>
+        <Link to="/Cars">Logs</Link>
+        <Link to="/">Home</Link>
       </nav>
     </header >
   )

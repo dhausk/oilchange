@@ -17,7 +17,6 @@ class App extends Component {
           <Route path="/Cars" component={Cars} />
         </div>
       </Router>
-
     );
   }
 }
