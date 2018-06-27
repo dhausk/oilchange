@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import Splash from "./Splash";
 import About from "./About";
+import Cars from './Cars';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Route path="/" component={Header} />
           <Route exact path="/" component={Splash} />
           <Route path="/About" component={About} />
+          <Route path="/Cars" component={Cars} />
         </div>
       </Router>
 
