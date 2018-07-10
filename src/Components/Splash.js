@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Splash(params) {
+function Splash() {
   return (
     < section className="" >
       <h1 className="">Oil Change</h1>
