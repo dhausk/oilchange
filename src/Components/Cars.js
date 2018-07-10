@@ -16,23 +16,19 @@ class Cars extends Component {
   }
   render() {
 
-    var isLoading = "isloading "
+    var vehList = <div className="select-vehicle">
+      <h4>Select your car from the drop down list or </h4>
+      <form onSubmit={this.vehicleSelected}>
+        <label name="vehicles">Please select your car from the list please. To go to its maintenance logs</label>
+        <button type="submit" >Take Me to My Logs</button>
+      </form>
+    </div>
+    var isLoading = "isloading ? <div> Loading</div> : vehList "
+
     return (
       <div className="veh-selection" >
-        <h2>Cars</h2>
-        <div className="select-vehicle">
-          <h4>Select your car from the drop down list or </h4>
-          <form onSubmit={this.vehicleSelected}>
-            <label name="vehicles">Please select your car from the list please. To go to its maintenance logs</label>
-            <select name="vehicles">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="fiat">Fiat</option>
-              <option value="audi">Audi</option>
-            </select>
-            <button type="submit" >Take Me to My Logs</button>
-          </form>
-        </div>
+        <h2>Vehicle Selection</h2>
+
       </div>
     );
   }
