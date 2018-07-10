@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import VehCard from './VehCard'
 
 class vehicles extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-
-  //   }
-  // }
-
   render() {
     const listLoaded = this.props.vehicles
     const vehicleForm = listLoaded.map(veh => {

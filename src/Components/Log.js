@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
-
-// import Maintenance from './Maintenance';
+// import LogList from 'LogList';
+// import Chart from 'Chart';
 
 class Log extends Component {
-  render() {
-    return (
+  constructor(props) {
+    super(props)
+    this.state = {
+      filteredLogs: [],
+      formSwitch: null,
+    }
+  }
 
-      <div className="Logs">
-        <h1>Your Selected Vehicle Logs</h1>
+  componentDidMount = () => {
+    const list = this.props.logList.filter(log => log.veh_id === this.props.vehicleSelected.id);
+    this.setState({ filteredLogs: list })
+  }
+  render() {
+
+
+    return (
+      <div className="Log">
+        {/* <LogList />
+        <Chart /> */}
 
       </div>
 

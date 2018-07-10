@@ -51,7 +51,9 @@ class App extends Component {
             vehicles={this.state.vehicles}
             onClickedCard={this.onClickedCard}
           />} />
-          <Route path="/Log" component={() => <Log vehicleSelected={this.state.selectedVehicle} />} />
+          <Route path="/Log" component={() => <Log
+            vehicleSelected={this.state.selectedVehicle}
+            logList={this.state.logs} />} />
         </div>
       </Router>
     );
