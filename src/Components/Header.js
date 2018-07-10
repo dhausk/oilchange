@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './App.css';
 
-function Header(params) {
+function Header() {
   return (
     < header className="App-header" >
       <div className="title-div">

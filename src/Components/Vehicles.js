@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import VehCard from './VehCard'
 
-
-class Cars extends Component {
+class vehicles extends Component {
 
   render() {
+
     const listLoaded = this.props.vehicles
-    const vehicleForm = <form className="vehicle-form">
-      <label name="vehicleSelect">Please select your vehicle</label>
-      <select name="vehicleSelect">
-
-      </select>
-    </form>
+    console.log(listLoaded)
+    const vehicleForm = listLoaded.map(veh => {
+      return <VehCard key={veh.id} veh={veh} />
+    })
     var isLoading = listLoaded ? vehicleForm : <h3>Loading vehicle selections</h3>
-
     return (
       <div className="veh-selection" >
-        <h2>Vehicle Selection</h2>
+        <h2>Select your vehicle</h2>
         {isLoading}
       </div>
     );
   }
 };
 
-export default Cars;
+export default vehicles;
