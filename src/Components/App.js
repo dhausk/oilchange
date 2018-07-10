@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import './App.css';
 import Header from './Header';
 import Splash from "./Splash";
@@ -12,7 +12,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      vehicles: []
+      vehicles: [],
+      selectedVehicle: null,
+      redirect: false
     }
   }
   componentDidMount = () => {
@@ -24,9 +26,12 @@ class App extends Component {
         })
       })
   }
-  onClickedCard = (event) => {
-    event.preventDefault()
-    console.log(event.target);
+  onClickedCard = (event, id) => {
+    const loadRedirect = !this.state.redirect
+    this.setState({
+      selectedVehicle: id,
+      redirect: loadRedirect
+    })
 
   }
   render() {
@@ -38,7 +43,7 @@ class App extends Component {
           <Route path="/About" component={About} />
           <Route path="/Vehicles" component={() => <Vehicles
             vehicles={this.state.vehicles}
-            onClickedCard={this.state.onClickedCard}
+            onClickedCard={this.onClickedCard}
           />} />
           <Route path="/Log" component={() => <Log />} />
         </div>

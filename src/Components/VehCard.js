@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
 
 function VehCard(props) {
   return (
-    < div className="vehicle-card" id={props.veh.id} onClick={props.vehClick} >
+    < div className="vehicle-card" id={props.veh.id} onClick={(event) => props.onClickedCard(event, props.veh.id)} >
       <p className="make" >Make : {props.veh.make} </p>
       <p className="model" >Model: {props.veh.model}</p>
       <p className="year" >Year: {props.veh.year}</p>
