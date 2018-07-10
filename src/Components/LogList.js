@@ -3,7 +3,6 @@ import React from 'react';
 function LogList(props) {
   let timeStamp = new Date(props.log.date);
   let date = timeStamp.toLocaleDateString();
-
   return (
     <div className="LogList-div">
       <p>{props.log.maintenance}</p>

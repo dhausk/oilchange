@@ -12,7 +12,7 @@ class Chart extends Component {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="cost" fill="#8884d8" />
+        <Bar dataKey="cost" fill="#036704" />
       </BarChart>
     );
   }
