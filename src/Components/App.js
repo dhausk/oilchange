@@ -26,14 +26,8 @@ class App extends Component {
         })
       })
   }
-  onClickedCard = (event, id) => {
-    const loadRedirect = !this.state.redirect
-    this.setState({
-      selectedVehicle: id,
-      redirect: loadRedirect
-    })
 
-  }
+
   render() {
     return (
       <Router>
@@ -43,7 +37,6 @@ class App extends Component {
           <Route path="/About" component={About} />
           <Route path="/Vehicles" component={() => <Vehicles
             vehicles={this.state.vehicles}
-            onClickedCard={this.onClickedCard}
           />} />
           <Route path="/Log" component={() => <Log />} />
         </div>

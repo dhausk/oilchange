@@ -13,7 +13,7 @@ class vehicles extends Component {
   render() {
     const listLoaded = this.props.vehicles
     const vehicleForm = listLoaded.map(veh => {
-      return <VehCard key={veh.id} veh={veh} onClickedCard={this.props.onClickedCard} />
+      return <VehCard key={veh.id} veh={veh} />
     })
     var isLoading = listLoaded ? vehicleForm : <h3>Loading vehicle selections</h3>
     return (
