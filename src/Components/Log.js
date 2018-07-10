@@ -19,6 +19,7 @@ class Log extends Component {
       filtered: true
     })
   }
+
   render() {
     let logs = this.state.filteredLogs.map(log => <LogList className="LogList" key={log.id} log={log} />)
     const sorted = this.state.filtered
@@ -28,7 +29,7 @@ class Log extends Component {
           <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
           <button className="add-button" >Add a Log</button>
           {logs}
-          {/* <Chart /> */}
+          <Chart logs={this.state.filteredLogs} />
         </div>
       );
     }
