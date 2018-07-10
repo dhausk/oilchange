@@ -1,47 +1,39 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+const URL = "http://localhost:8080/api/vehicles";
 
 class Cars extends Component {
-  CarSelected = () => {
-    // event.preventDefault();
+
+  vehicleSelected = () => {
 
   }
-  onBefore = () => {
-
+  componentDidMount = () => {
+    fetch(URL)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+      })
   }
   render() {
+
+    var isLoading = "isloading "
     return (
-      <div className="">
+      <div className="veh-selection" >
         <h2>Cars</h2>
-        <p>Select your car from the drop down list or </p>
-        <div>
-          <form onSubmit={this.CarSelected}>
-            <label>Please select your car from the list please. To go to its Logs</label>
-            <input></input>
+        <div className="select-vehicle">
+          <h4>Select your car from the drop down list or </h4>
+          <form onSubmit={this.vehicleSelected}>
+            <label name="vehicles">Please select your car from the list please. To go to its maintenance logs</label>
+            <select name="vehicles">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="fiat">Fiat</option>
+              <option value="audi">Audi</option>
+            </select>
             <button type="submit" >Take Me to My Logs</button>
           </form>
         </div>
-        <div>
-          <form>
-            <label>Please enter the name of your car, can be a nick name too.</label>
-            <input></input>
-            <button type="submit">Add Car</button>
-          </form>
-          <form>
-            <label>Please select your car to Edit</label>
-            <input></input>
-            <button type="submit">Done Editing</button>
-          </form>
-          <form>
-            <label>Please select your car to Delete</label>
-            <input></input>
-            <button type="submit">Delete</button>
-          </form>
-        </div>
-
       </div>
-
-
     );
   }
 };

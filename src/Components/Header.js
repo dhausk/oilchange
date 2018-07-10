@@ -5,14 +5,20 @@ import './App.css';
 function Header(params) {
   return (
     < header className="App-header" >
-      <div>
-        <h1 className="App-title">Oil Change</h1>
+      <div className="title-div">
+        <h1 className="title">Oil Change</h1>
         <p>When did I do that again?</p>
       </div>
-      <nav>
-        <Link to="/About">About</Link>
-        <Link to="/Cars">Logs</Link>
-        <Link to="/">Home</Link>
+      <nav className="header-nav" >
+        <Link to="/About">
+          <button className="nav-button" >About</button>
+        </Link>
+        <Link to="/Cars">
+          <button className="nav-button" >Logs</button>
+        </Link>
+        <Link to="/">
+          <button className="nav-button" >Home</button>
+        </Link>
       </nav>
     </header >
   )
