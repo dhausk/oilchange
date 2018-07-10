@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import VehCard from './VehCard'
 
 class vehicles extends Component {
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+
+  //   }
+  // }
 
   render() {
-
     const listLoaded = this.props.vehicles
-    console.log(listLoaded)
     const vehicleForm = listLoaded.map(veh => {
-      return <VehCard key={veh.id} veh={veh} />
+      return <VehCard key={veh.id} veh={veh} vehClick={this.props.onClickedCard} />
     })
     var isLoading = listLoaded ? vehicleForm : <h3>Loading vehicle selections</h3>
     return (

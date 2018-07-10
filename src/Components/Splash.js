@@ -14,7 +14,7 @@ function Splash(params) {
       to use, fill out a form and we will do the rest. Do an oil change? Change the air Filter?
       Just fill out another form an we will keep a record for you.</p>
       <button>
-        <Link to="/Cars">Begin</Link>
+        <Link to="/Vehicles">Begin</Link>
       </button>
     </section >
   )

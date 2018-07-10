@@ -5,6 +5,7 @@ import Header from './Header';
 import Splash from "./Splash";
 import About from "./About";
 import Vehicles from './Vehicles';
+import Log from './Log';
 const URL = "http://localhost:8080/api/vehicles";
 
 class App extends Component {
@@ -23,7 +24,11 @@ class App extends Component {
         })
       })
   }
+  onClickedCard = (event) => {
+    event.preventDefault()
+    console.log(event.target);
 
+  }
   render() {
     return (
       <Router>
@@ -31,8 +36,11 @@ class App extends Component {
           <Route path="/" component={Header} />
           <Route exact path="/" component={Splash} />
           <Route path="/About" component={About} />
-          <Route path="/Vehicles" component={() => <Vehicles vehicles={this.state.vehicles} />} />
-          {/* <Route path="/Log" component={() => <Log />} /> */}
+          <Route path="/Vehicles" component={() => <Vehicles
+            vehicles={this.state.vehicles}
+            onClickedCard={this.state.onClickedCard}
+          />} />
+          <Route path="/Log" component={() => <Log />} />
         </div>
       </Router>
     );
