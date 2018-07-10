@@ -31,7 +31,7 @@ class App extends Component {
           <Route path="/" component={Header} />
           <Route exact path="/" component={Splash} />
           <Route path="/About" component={About} />
-          <Route path="/Cars" component={() => <Cars vehicles={this.state.vehicles} />} />
+          <Route path="/Vehicles" component={() => <Cars vehicles={this.state.vehicles} />} />
         </div>
       </Router>
     );

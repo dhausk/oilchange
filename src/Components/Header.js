@@ -13,8 +13,8 @@ function Header(params) {
         <Link to="/About">
           <button className="nav-button" >About</button>
         </Link>
-        <Link to="/Cars">
-          <button className="nav-button" >Logs</button>
+        <Link to="/Vehicles">
+          <button className="nav-button" >Vehicles</button>
         </Link>
         <Link to="/">
           <button className="nav-button" >Home</button>
