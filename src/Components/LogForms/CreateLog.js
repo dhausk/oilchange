@@ -4,10 +4,10 @@ class CreateLog extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      "veh_id": this.props.vehicleSelected.id,
+      "veh_id": 2,
       "maintenance": "",
       "cost": 0,
-      "date": 'YYYY-MM-DD',
+      "date": 'DD-MM-YYYY',
       "note": ""
     }
   }
@@ -30,10 +30,13 @@ class CreateLog extends Component {
         <form className="add-form" onSubmit={this.props.formSubmit}>
           <label name="maintenance">What maintenance did your perform?</label>
           <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance} required></input>
+
           <label name="cost">how much did this cost?</label>
-          <input type="text" name="cost" onChange={this.changeHandler} value={this.state.cost} required></input>
+          <input type="number" name="cost" onChange={this.changeHandler} value={this.state.cost} required></input>
+
           <label name="date">When did this maintenance occur?</label>
           <input type="date" name="date" onChange={this.changeHandler} value={this.state.date} required></input>
+
           <label name="note">Any additional comments or notes?</label>
           <textarea name="note" onChange={this.changeHandler} value={this.state.note}></textarea>
           <button className="form-submit">Add Log</button>
