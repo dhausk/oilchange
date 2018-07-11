@@ -18,9 +18,14 @@ class CreateLog extends Component {
       [key]: value
     })
   }
+  logCreateSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state);
+
+  }
   render() {
     return (
-      <div className="add-log" onSubmit={(event) => { this.props.formSubmit(event, this.state) }}>
+      <div className="add-log" onSubmit={this.logCreateSubmit} >
         <h4>Add a maintenance service log for the {this.props.vehicleSelected.model}</h4>
         <form className="add-form" onSubmit={this.props.formSubmit}>
           <label name="maintenance">What maintenance did your perform?</label>
