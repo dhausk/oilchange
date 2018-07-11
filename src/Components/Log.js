@@ -11,7 +11,8 @@ class Log extends Component {
       filteredLogs: [],
       formRender: null,
       filtered: false,
-      display: "0"
+      display: "0",
+      selectedLog: ''
     }
   }
 
@@ -26,24 +27,30 @@ class Log extends Component {
   formsRender(display) {
     switch (display) {
       case "0":
-        return (<React.Fragment>
+        return (<div className="vehicle-selected">
           <p className="make" >Make : {this.props.vehicleSelected.make} </p>
           <p className="model" >Model: {this.props.vehicleSelected.model}</p>
           <p className="year" >Year: {this.props.vehicleSelected.year}</p>
           <p className="details" >Details: {this.props.vehicleSelected.note}</p>
-        </React.Fragment>);
+        </div>);
       case "1":
         return <CreateLog vehicleSelected={this.props.vehicleSelected} formSubmit={this.formSubmit} />;
       case "2":
-        return <UpdateLog vehicleSelected={this.props.vehicleSelected} logSelected={this.props} formSubmit={this.formSubmit} />;
+        return <UpdateLog vehicleSelected={this.props.vehicleSelected} logSelected={this.props.selectedLog} formSubmit={this.formSubmit} />;
       default:
         console.log("display switch statement error");
         break;
     }
   }
   formClick = (event) => {
-    console.log(event.target.value);
-    // this.setState({ display: "1" });
+    let form = event.target.value;
+    const id = event.target.id;
+    var currentLog = this.state.filteredLogs.filter(log => log.id === id)[0]
+    console.log(currentLog);
+    this.setState({
+      selectedLog: currentLog,
+      display: form
+    });
   }
   formSubmit = (event, state) => {
     event.preventDefault();

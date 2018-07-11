@@ -11,15 +11,15 @@ class UpdateLog extends Component {
       "note": ""
     }
   }
-  componentDidMount = () => {
-    this.setState({
-      "veh_id": this.props.veh_id,
-      "maintenance": this.props.maintenance,
-      "cost": this.props.cost,
-      "date": this.props.date,
-      "note": this.props.note
-    })
-  }
+  // componentDidMount = () => {
+  //   this.setState({
+  //     "veh_id": this.props.veh_id,
+  //     "maintenance": this.props.maintenance,
+  //     "cost": this.props.cost,
+  //     "date": this.props.date,
+  //     "note": this.props.note
+  //   })
+  // }
   changeHandler = (event) => {
     const key = event.target.name
     const value = event.target.value
@@ -35,11 +35,11 @@ class UpdateLog extends Component {
           <label name="maintenance">What maintenance did your perform?</label>
           <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance}></input>
           <label name="cost">how much did this cost?</label>
-          <input type="text" name="cost" onChange={this.changeHandler} value={this.state.cost}></input>
+          <input type="text" name="cost" onChange={this.changeHandler} value={this.state.cost} ></input>
           <label name="date">When did this maintenance occur?</label>
           <input type="text" name="date" onChange={this.changeHandler} value={this.state.date} ></input>
           <label name="note">Any additional comments or notes?</label>
-          <textarea name="note" onChange={this.changeHandler} value={this.state.note}></textarea>
+          <textarea name="note" onChange={this.changeHandler} value={this.state.note} ></textarea>
           <button className="form-submit">Add Log</button>
         </form>
       </div>

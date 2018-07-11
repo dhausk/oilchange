@@ -8,9 +8,11 @@ function VehCard(props) {
       <p className="model" >Model: {props.veh.model}</p>
       <p className="year" >Year: {props.veh.year}</p>
       <p className="details" >Details: {props.veh.note}</p>
-      <button className="vehicle-select" onClick={(event) => props.onClickedCard(props.veh.id)}>
+      <button className="vehicle-button" onClick={(event) => props.onClickedCard(props.veh.id)}>
         <Link to="/Log">Select the {props.veh.model}</Link>
       </button>
+      <button className="vehicle-button" onClick={(event) => props.handleEdit(props.veh.id)}>Edit</button>
+      <button className="vehicle-button" onClick={(event) => props.handleDelete(props.veh.id)}>Delete</button>
     </div >
   )
 }

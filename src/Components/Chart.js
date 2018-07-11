@@ -6,7 +6,7 @@ class Chart extends Component {
     const data = this.props.logs
     return (
       <BarChart width={600} height={300} data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        margin={{ top: 5, right: 30, left: 20, bottom: 10 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis />

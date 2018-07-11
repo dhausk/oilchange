@@ -9,7 +9,7 @@ function LogList(props) {
       <p>{date}</p>
       <p>{props.log.note}</p>
       <p>{props.log.cost}</p>
-      <button className="log-button" value="2" onClick={(event) => props.editClick(event)}>Edit</button>
+      <button className="log-button" value="2" id={props.log.id} onClick={(event) => props.editClick(event)}>Edit</button>
       <button className="log-button" >Delete</button>
     </div>
   )
