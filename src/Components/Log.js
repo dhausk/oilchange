@@ -22,8 +22,6 @@ class Log extends Component {
 
   render() {
     let logs = this.state.filteredLogs.map(log => <LogList className="LogList" key={log.id} log={log} />)
-    // const sorted = this.state.filtered
-    // if (sorted) {
     return (
       <div className="Log">
         <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
@@ -32,14 +30,6 @@ class Log extends Component {
         <Chart logs={this.state.filteredLogs} />
       </div>
     );
-    // }
-    // else {
-    //   return (
-    //     <div className="Log">
-    //       <h2>your Maintenance Log is Loading</h2>
-    //     </div>
-    //   )
-    // }
   }
 }
 
