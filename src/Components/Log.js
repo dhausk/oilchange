@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import LogList from './LogList';
 import Chart from './Chart';
+import CreateLog from './LogForms/CreateLog';
+import UpdateLog from './LogForms/UpdateLog';
 
 class Log extends Component {
   constructor(props) {
     super(props)
     this.state = {
       filteredLogs: [],
-      formSwitch: null,
-      filtered: false
+      formRender: null,
+      filtered: false,
+      display: "0"
     }
   }
 
@@ -17,17 +20,49 @@ class Log extends Component {
     this.setState({
       filteredLogs: list,
       filtered: true
-    })
+    });
   }
 
+  formsRender(display) {
+    switch (display) {
+      case "0":
+        return (<React.Fragment>
+          <p className="make" >Make : {this.props.vehicleSelected.make} </p>
+          <p className="model" >Model: {this.props.vehicleSelected.model}</p>
+          <p className="year" >Year: {this.props.vehicleSelected.year}</p>
+          <p className="details" >Details: {this.props.vehicleSelected.note}</p>
+        </React.Fragment>);
+      case "1":
+        return <CreateLog vehicleSelected={this.props.vehicleSelected} formSubmit={this.formSubmit} />;
+      case "2":
+        return <UpdateLog vehicleSelected={this.props.vehicleSelected} logSelected={this.props} formSubmit={this.formSubmit} />;
+      default:
+        console.log("display switch statement error");
+        break;
+    }
+  }
+  formClick = (event) => {
+    console.log(event.target.value);
+    // this.setState({ display: "1" });
+  }
+  formSubmit = (event, state) => {
+    event.preventDefault();
+    console.log(state);
+    this.setState({ display: "0" });
+  }
+  handle
+
   render() {
-    let logs = this.state.filteredLogs.map(log => <LogList className="LogList" key={log.id} log={log} />)
+    let logs = this.state.filteredLogs.map(log => <LogList className="LogList" key={log.id} log={log} editClick={this.formClick} delete />);
+    let displayForm = this.formsRender(this.state.display);
+
     return (
       <div className="Log">
         <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
-        <button className="add-button" >Add a Log</button>
-        {logs}
         <Chart logs={this.state.filteredLogs} />
+        {logs}
+        <button className="add-button" onClick={this.formClick} value="1" >Add a Log</button>
+        {displayForm}
       </div>
     );
   }
