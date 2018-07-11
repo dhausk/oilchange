@@ -24,11 +24,11 @@ class CreateLog extends Component {
         <h4>Add a maintenance service log for the {this.props.vehicleSelected.model}</h4>
         <form className="add-form" onSubmit={this.props.formSubmit}>
           <label name="maintenance">What maintenance did your perform?</label>
-          <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance}></input>
+          <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance} required></input>
           <label name="cost">how much did this cost?</label>
-          <input type="text" name="cost" onChange={this.changeHandler} value={this.state.cost}></input>
+          <input type="text" name="cost" onChange={this.changeHandler} value={this.state.cost} required></input>
           <label name="date">When did this maintenance occur?</label>
-          <input type="text" name="date" onChange={this.changeHandler} value={this.state.date} ></input>
+          <input type="date" name="date" onChange={this.changeHandler} value={this.state.date} required></input>
           <label name="note">Any additional comments or notes?</label>
           <textarea name="note" onChange={this.changeHandler} value={this.state.note}></textarea>
           <button className="form-submit">Add Log</button>
