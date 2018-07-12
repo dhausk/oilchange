@@ -93,24 +93,24 @@
 .veh-selection{
   width: 50%;
 }
-.vehicle-card{
+.card-div{
   background-color:  #2c7df7d7;
   border-radius: 1rem; 
   padding: 1rem;
   margin: 0.5rem;
 }
-.veh-deets{
+.card-deets{
   background-color: #000000;
   border-radius: 1rem; 
   color: white;
   padding: 1rem;
   margin-bottom: 0.2rem;
 }
-.veh-buttons{
+.card-buttons{
   display: flex;
   flex-direction: column;
 }
-.veh-button{
+.card-button{
   cursor: pointer;
   text-decoration: none;
   font-size: 1rem;
@@ -122,6 +122,7 @@
 .veh-form{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .form-submit{
   cursor: pointer;
@@ -130,4 +131,10 @@
   border-radius: 1rem;
   margin: 0.3rem;
   background-color:  #070101de;
+}
+.log{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  text-align: center;
 }
