@@ -7,17 +7,17 @@ function Header() {
     < header className="App-header" >
       <div className="title-div">
         <h1 className="title">Oil Change</h1>
-        <p>When did I do that again?</p>
+        <p className="app-intro">When did I do that again?</p>
       </div>
       <nav className="header-nav" >
-        <Link to="/About">
-          <button className="nav-button" >About</button>
+        <Link to="/">
+          <button className="nav-button" >Home</button>
         </Link>
         <Link to="/Vehicles">
           <button className="nav-button" >Vehicles</button>
         </Link>
-        <Link to="/">
-          <button className="nav-button" >Home</button>
+        <Link to="/About">
+          <button className="nav-button" >About</button>
         </Link>
       </nav>
     </header >

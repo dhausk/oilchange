@@ -5,34 +5,43 @@
 .App-header {
   background-color: green;
   height: 25vh;
-  color: white;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
+  background-image: url("../assets/oilPour.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 .title-div{
+  padding: 1rem;
+  color: white;
   text-align: center;
+  background-color: black;
+  opacity: 0.7;
 }
 .header-nav{
   width: 50%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  
 }
 .nav-button{
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.3rem;
-  color: black;
+  font-size: 3.5vh;
+  color: white;
   border-radius: 1rem;
-  margin-left: 1%;
+  margin: 0.3rem;
+  background-color:  #070101de;
 }
 
 
-.App-title {
-  font-size: 1.5em;
+.title {
+  font-size: 2.3em;
 }
 .App-intro {
   font-size: large;
