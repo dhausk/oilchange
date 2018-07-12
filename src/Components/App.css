@@ -59,6 +59,28 @@
   margin: 0.3rem;
   background-color:  #070101de;
 }
-
-
+.about{
+  text-align: center;
+  padding: 2% 5%;
+  
+}
+.about h2{
+  font-size: 2rem;
+}
+.about-me{
+  display: flex;
+}
+.about-me img{
+  height: 20vh;
+  width: auto;
+}
+.about button{
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 3.5vh;
+  color: white;
+  border-radius: 2rem;
+  margin: 0.3rem;
+  background-color:  #070101de;
+}
 

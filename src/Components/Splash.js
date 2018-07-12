@@ -13,9 +13,7 @@ function Splash() {
       data to give a time line of when you last did your maintenance and the frequency. It is simple
       to use, fill out a form and we will do the rest. Do an oil change? Change the air Filter?
       Just fill out another form an we will keep a record for you.</p>
-      <Link to="/Vehicles">
-        <button>Let's do some Work</button>
-      </Link>
+      <Link to="/Vehicles"><button>Let's do some Work</button></Link>
     </section>
   )
 }

@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import me from '../assets/Me.JPG'
 function About(params) {
   return (
-    < section className="about" >
+    <section className="about" >
       <h2>About</h2>
-      <p>Hello, I am a web dev student trying to become a full stack web developer who has a hankering to do
-      his vehicle maintenance. I created this app to help me keep track of all maintenance I do.</p>
-      <button><Link to="/">Go Back</Link></button>
-
-    </section >
+      <div className="about-me">
+        <img alt="Derek Hassick" src={me} />
+        <p>Hello, My Name is Derek Hassick and I am a web developer who has a hankering to do
+        my own vehicle maintenance. I created this app to help me keep track of all maintenance I do. I hope it
+      you find it helps you as well.</p>
+      </div>
+      <Link to="/"><button>Happy Tinkering</button></Link>
+    </section>
   )
 }
 
