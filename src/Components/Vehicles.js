@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import VehCard from './VehCard';
-import AddVeh from './vehForm/AddVeh';
 import EditVeh from './vehForm/EditVeh';
 
 class vehicles extends Component {
