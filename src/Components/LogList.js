@@ -13,7 +13,7 @@ function LogList(props) {
       </div>
       <div className="card-buttons"></div>
       <button className="card-button" value="logs" id="2" onClick={(event) => props.editClick(event, props.log.id)}>Edit</button>
-      <button className="card-button" >Delete</button>
+      <button className="card-button" value="logs" onClick={(event) => props.handleDelete(event, props.log.id)}>Delete</button>
     </div>
   )
 }

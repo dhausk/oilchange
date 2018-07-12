@@ -59,7 +59,7 @@ class App extends Component {
     if (cardType === "vehicles") {
       return `${vehiclesURL}/${id}`
     }
-    else {
+    else if (cardType === "logs") {
       return `${logURL}/${id}`
     }
   }
@@ -67,7 +67,7 @@ class App extends Component {
     if (cardType === "vehicles") {
       return this.state.vehicles;
     }
-    else {
+    else if (cardType === "logs") {
       return this.state.logs;
     }
   }
@@ -77,7 +77,8 @@ class App extends Component {
     const deleteURL = this.urlIdTypeCreate(cardType, id)
     let currentList = this.currentListType(cardType)
     let deletedCard = currentList.filter(item => item.id === id)[0]
-
+    console.log(cardType, deletedCard);
+    console.log(currentList, deleteURL);
     fetch(deleteURL, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
@@ -85,7 +86,6 @@ class App extends Component {
       .then(this.handleErrors)
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         currentList.splice(currentList.indexOf(deletedCard), 1)
         this.setState({
           [cardType]: currentList,
@@ -97,18 +97,14 @@ class App extends Component {
       })
   }
 
-  handleVehEdit = () => {
+  handleEdit = () => {
 
   }
-  handleLogEdit = () => {
+
+  handleAdd = () => {
 
   }
-  handleVehAdd = () => {
 
-  }
-  handleVehAdd = () => {
-
-  }
   render() {
     return (
       <Router>

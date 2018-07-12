@@ -34,7 +34,6 @@ class Log extends Component {
           formSubmit={this.formSubmit} />);
       default:
         return <h2>Add a Log</h2>
-        break;
     }
   }
   formClick = (event) => {
@@ -51,9 +50,11 @@ class Log extends Component {
 
   render() {
     let logs = this.state.filteredLogs.map(log => {
-      <LogList className="LogList"
+      return (<LogList className="LogList"
         key={log.id} log={log}
-        editClick={this.formClick} delete={this.props.handleDelete} />
+        editClick={this.formClick}
+        handleDelete={this.props.handleDelete} />
+      )
     });
     let displayForm = this.formsRender(this.state.display);
 
