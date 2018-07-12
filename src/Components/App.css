@@ -1,9 +1,10 @@
 .App {
   align-content: center;
   height: 100vw;
+  padding: 1%;
+  background-color: #d5d7ec75
 }
 .App-header {
-  background-color: green;
   height: 25vh;
   display: flex;
   flex-flow: row wrap;
@@ -15,11 +16,12 @@
 
 }
 .title-div{
-  padding: 1rem;
+  padding: 0.5rem;
   color: white;
   text-align: center;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.8;
+  border-radius: 2rem;
 }
 .header-nav{
   width: 50%;
@@ -34,16 +36,29 @@
   text-decoration: none;
   font-size: 3.5vh;
   color: white;
-  border-radius: 1rem;
+  border-radius: 2rem;
   margin: 0.3rem;
   background-color:  #070101de;
 }
-
-
 .title {
   font-size: 2.3em;
 }
 .App-intro {
   font-size: large;
 }
+.splash{
+  text-align: center;
+  padding: 2% 5%;
+}
+.splash button{
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 3.5vh;
+  color: white;
+  border-radius: 2rem;
+  margin: 0.3rem;
+  background-color:  #070101de;
+}
+
+
 
