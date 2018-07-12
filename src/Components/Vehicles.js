@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import VehCard from './VehCard'
+import VehCard from './VehCard';
+import AddVeh from './vehForm/AddVeh';
+import EditVeh from './vehForm/EditVeh';
 
 class vehicles extends Component {
   render() {
@@ -9,9 +11,12 @@ class vehicles extends Component {
     })
     var isLoading = listLoaded ? vehicleForm : <h3>Loading vehicle selections</h3>
     return (
-      <div className="veh-selection" >
-        <h2>Select your vehicle</h2>
-        {isLoading}
+      <div>
+        <div className="veh-selection" >
+          <h2>Select your vehicle</h2>
+          {isLoading}
+        </div>
+        <EditVeh />
       </div>
     );
   }
