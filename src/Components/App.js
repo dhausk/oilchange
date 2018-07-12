@@ -122,10 +122,10 @@ class App extends Component {
           <Route path="/Log" component={() => <Log
             vehicleSelected={this.state.selectedVehicle}
             selectedCard={this.state.selectedCard}
-            logList={this.state.logs} />}
+            logList={this.state.logs}
             onClickedCard={this.onClickedCard}
             handleDelete={this.handleDelete}
-          />
+          />} />
         </div>
       </Router>
     );
