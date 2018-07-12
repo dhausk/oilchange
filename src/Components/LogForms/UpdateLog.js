@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 
 class UpdateLog extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      "veh_id": 1,
-      "maintenance": "",
-      "cost": 0,
-      "date": 'YYYY-MM-DD',
-      "note": ""
-    }
-  }
-  changeHandler = (event) => {
-    const key = event.target.name
-    const value = event.target.value
-    this.setState({
-      [key]: value
-    })
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     "veh_id": 1,
+  //     "maintenance": "",
+  //     "cost": 0,
+  //     "date": 'YYYY-MM-DD',
+  //     "note": ""
+  //   }
+  // }
+  // changeHandler = (event) => {
+  //   const key = event.target.name
+  //   const value = event.target.value
+  //   this.setState({
+  //     [key]: value
+  //   })
+  // }
   render() {
     return (
       <div className="Update-log">

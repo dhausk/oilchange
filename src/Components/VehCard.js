@@ -16,8 +16,8 @@ function VehCard(props) {
             Select the {props.veh.model}
           </button>
         </Link>
-        <button className="card-button" onClick={(event) => props.handleEdit(props.veh.id)}>Edit</button>
-        <button className="card-button" onClick={(event) => props.handleDelete(props.veh.id)}>Delete</button>
+        <button className="card-button" onClick={() => props.onClickedCard(props.veh)}>Edit</button>
+        <button className="card-button" value="veh" onClick={(event) => props.handleDelete(event, props.veh.id)}>Delete</button>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ function LogList(props) {
         <p>Cost: ${props.log.cost}</p>
       </div>
       <div className="card-buttons"></div>
-      <button className="card-button" value="2" id={props.log.id} onClick={(event) => props.editClick(event)}>Edit</button>
+      <button className="card-button" value="log" id="2" onClick={(event) => props.editClick(event, props.log.id)}>Edit</button>
       <button className="card-button" >Delete</button>
     </div>
   )

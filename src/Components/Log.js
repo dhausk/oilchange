@@ -38,7 +38,7 @@ class Log extends Component {
     }
   }
   formClick = (event) => {
-    let form = event.target.value;
+    let form = event.target.id;
     this.setState({
       display: form
     });
@@ -53,7 +53,7 @@ class Log extends Component {
     let logs = this.state.filteredLogs.map(log => {
       <LogList className="LogList"
         key={log.id} log={log}
-        editClick={this.formClick} delete />
+        editClick={this.formClick} delete={this.props.handleDelete} />
     });
     let displayForm = this.formsRender(this.state.display);
 
@@ -62,7 +62,7 @@ class Log extends Component {
         <div className="logs-chart">
           <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
           <Chart logs={this.state.filteredLogs} />
-          <button className="add-button" onClick={this.formClick} value="1" >Add a Log</button>
+          <button className="add-button" onClick={this.formClick} id="1" >Add a Log</button>
           {logs}
         </div>
         <div className="log-form">
