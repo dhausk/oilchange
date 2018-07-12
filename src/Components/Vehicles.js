@@ -11,7 +11,7 @@ class vehicles extends Component {
     })
     var isLoading = listLoaded ? vehicleForm : <h3>Loading vehicle selections</h3>
     return (
-      <div>
+      <div className="vehicles">
         <div className="veh-selection" >
           <h2>Select your vehicle</h2>
           {isLoading}

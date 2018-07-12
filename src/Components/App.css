@@ -84,4 +84,28 @@
   margin: 0.3rem;
   background-color:  #070101de;
 }
-
+.vehicles{
+  display: flex;
+}
+.veh-selection{
+  width: 100%;
+}
+.vehicle-card{
+  background-color:  #070101;
+  border-radius: 1rem; 
+  color: white;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.veh-buttons{
+  display: flex;
+  flex-direction: column;
+}
+.veh-button{
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin: 0.2rem;
+  width: 100%;
+}
