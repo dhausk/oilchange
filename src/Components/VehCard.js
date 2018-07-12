@@ -12,7 +12,7 @@ function VehCard(props) {
       </div>
       <div className="card-buttons">
         <Link to="/Log" >
-          <button className="card-button" onClick={(event) => props.onClickedCard(props.veh.id)}>
+          <button className="card-button" onClick={(event) => props.onClickedVeh(props.veh.id)}>
             Select the {props.veh.model}
           </button>
         </Link>

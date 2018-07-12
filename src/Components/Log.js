@@ -9,10 +9,8 @@ class Log extends Component {
     super(props)
     this.state = {
       filteredLogs: [],
-      formRender: null,
       filtered: false,
-      display: "0",
-      selectedLog: ''
+      display: "1",
     }
   }
 
@@ -26,41 +24,37 @@ class Log extends Component {
 
   formsRender(display) {
     switch (display) {
-      case "0":
-        return (<div className="vehicle-selected">
-          <p className="make" >Make : {this.props.vehicleSelected.make} </p>
-          <p className="model" >Model: {this.props.vehicleSelected.model}</p>
-          <p className="year" >Year: {this.props.vehicleSelected.year}</p>
-          <p className="details" >Details: {this.props.vehicleSelected.note}</p>
-        </div>);
       case "1":
-        return <CreateLog vehicleSelected={this.props.vehicleSelected} formSubmit={this.formSubmit} />;
+        return (<CreateLog vehicleSelected={this.props.vehicleSelected}
+          formSubmit={this.formSubmit} />);
       case "2":
-        return <UpdateLog vehicleSelected={this.props.vehicleSelected} logSelected={this.props.selectedLog} formSubmit={this.formSubmit} />;
+        return (<UpdateLog
+          vehicleSelected={this.props.vehicleSelected}
+          logSelected={this.props.selectedLog}
+          formSubmit={this.formSubmit} />);
       default:
-        console.log("display switch statement error");
+        return <h2>Add a Log</h2>
         break;
     }
   }
   formClick = (event) => {
     let form = event.target.value;
-    const id = event.target.id;
-    var currentLog = this.state.filteredLogs.filter(log => log.id === id)[0]
-    console.log(currentLog);
     this.setState({
-      selectedLog: currentLog,
       display: form
     });
   }
   formSubmit = (event, state) => {
     event.preventDefault();
     console.log(state);
-    this.setState({ display: "0" });
+    this.setState({ display: "1" });
   }
-  handle
 
   render() {
-    let logs = this.state.filteredLogs.map(log => <LogList className="LogList" key={log.id} log={log} editClick={this.formClick} delete />);
+    let logs = this.state.filteredLogs.map(log => {
+      <LogList className="LogList"
+        key={log.id} log={log}
+        editClick={this.formClick} delete />
+    });
     let displayForm = this.formsRender(this.state.display);
 
     return (
@@ -68,10 +62,17 @@ class Log extends Component {
         <div className="logs-chart">
           <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
           <Chart logs={this.state.filteredLogs} />
+          <button className="add-button" onClick={this.formClick} value="1" >Add a Log</button>
           {logs}
         </div>
         <div className="log-form">
-          <button className="add-button" onClick={this.formClick} value="1" >Add a Log</button>
+          <div className="vehicle-selected">
+            <h3 className="veh-selected" >Your Vehicle's details</h3>
+            <p className="make" >Make : {this.props.vehicleSelected.make} </p>
+            <p className="model" >Model: {this.props.vehicleSelected.model}</p>
+            <p className="year" >Year: {this.props.vehicleSelected.year}</p>
+            <p className="details" >Details: {this.props.vehicleSelected.note}</p>
+          </div>
           {displayForm}
         </div>
       </div>

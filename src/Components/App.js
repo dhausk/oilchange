@@ -15,7 +15,9 @@ class App extends Component {
     this.state = {
       vehicles: [],
       logs: [],
-      selectedVehicle: null
+      selectedVehicle: {},
+      selectedCard: {},
+
     }
   }
   componentDidMount = () => {
@@ -34,11 +36,22 @@ class App extends Component {
         })
       })
   }
-  onClickedCard = (id) => {
+  onClickedVeh = (id) => {
     let vehicle = this.state.vehicles.find(veh => veh.id === id)
     this.setState({
-      selectedVehicle: vehicle,
+      selectedVehicle: vehicle
     })
+  }
+  onClickedCard = (id) => {
+    let log = this.state.logs.find(log => log.id === id)
+    this.setState({
+      selectedCard: log
+    })
+  }
+  handleDelete = (event) => {
+    event.preventDefault();
+    const cardId = event.target
+    console.log(cardId);
   }
   render() {
     return (
@@ -49,11 +62,17 @@ class App extends Component {
           <Route path="/About" component={About} />
           <Route path="/Vehicles" component={() => <Vehicles
             vehicles={this.state.vehicles}
+            onClickedVeh={this.onClickedVeh}
+            handleDelete={this.handleDelete}
             onClickedCard={this.onClickedCard}
+            selectedCard={this.state.selectedCard}
           />} />
           <Route path="/Log" component={() => <Log
             vehicleSelected={this.state.selectedVehicle}
+            selectedCard={this.state.selectedCard}
             logList={this.state.logs} />}
+            onClickedCard={this.onClickedCard}
+            handleDelete={this.handleDelete}
           />
         </div>
       </Router>
