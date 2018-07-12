@@ -7,7 +7,7 @@ class CreateLog extends Component {
       "veh_id": 2,
       "maintenance": "",
       "cost": 0,
-      "date": 'DD-MM-YYYY',
+      "date": 'yyyy-mm-dd',
       "note": ""
     }
   }
