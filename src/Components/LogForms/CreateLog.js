@@ -27,7 +27,7 @@ class CreateLog extends Component {
     return (
       <div className="add-log" onSubmit={this.logCreateSubmit} >
         <h4>Add a maintenance service log for the {this.props.vehicleSelected.model}</h4>
-        <form className="add-form" onSubmit={this.props.formSubmit}>
+        <form className="form" onSubmit={this.props.formSubmit}>
           <label name="maintenance">What maintenance did your perform?</label>
           <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance} required></input>
 

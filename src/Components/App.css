@@ -119,7 +119,7 @@
   width: 100%;
 }
 
-.veh-form{
+.form{
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -137,4 +137,5 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
   text-align: center;
+  margin: 1rem;
 }

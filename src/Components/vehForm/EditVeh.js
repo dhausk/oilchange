@@ -22,7 +22,7 @@ class EditVeh extends Component {
     return (
       <div className="update-veh">
         <h4>Add or Edit</h4>
-        <form className="veh-form" onSubmit={(event) => this.props.formSubmit(event, this.state)}>
+        <form className="form" onSubmit={(event) => this.props.formSubmit(event, this.state)}>
           <label name="maintenance">What maintenance did your perform?</label>
           <input type="text" name="maintenance" onChange={this.changeHandler} defaultValue={this.state.maintenance} ></input>
           <label name="cost">how much did this cost?</label>

@@ -6,10 +6,10 @@ function LogList(props) {
   return (
     <div className="card-div">
       <div className="card-deets">
-        <p>{props.log.maintenance}</p>
-        <p>{props.log.date}</p>
-        <p>{props.log.note}</p>
-        <p>{props.log.cost}</p>
+        <p>Maintenance done: {props.log.maintenance}</p>
+        <p>Date: {props.log.date}</p>
+        <p>Notes: {props.log.note}</p>
+        <p>Cost: ${props.log.cost}</p>
       </div>
       <div className="card-buttons"></div>
       <button className="card-button" value="2" id={props.log.id} onClick={(event) => props.editClick(event)}>Edit</button>

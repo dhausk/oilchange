@@ -64,14 +64,16 @@ class Log extends Component {
     let displayForm = this.formsRender(this.state.display);
 
     return (
-      <div className="Log">
-        <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
+      <div className="log">
         <div className="logs-chart">
+          <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
           <Chart logs={this.state.filteredLogs} />
           {logs}
         </div>
-        <button className="add-button" onClick={this.formClick} value="1" >Add a Log</button>
-        {displayForm}
+        <div className="log-form">
+          <button className="add-button" onClick={this.formClick} value="1" >Add a Log</button>
+          {displayForm}
+        </div>
       </div>
     );
   }
