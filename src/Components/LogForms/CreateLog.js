@@ -21,7 +21,6 @@ class CreateLog extends Component {
   logCreateSubmit = (event) => {
     event.preventDefault();
     console.log(this.state);
-
   }
   render() {
     return (

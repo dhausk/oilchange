@@ -20,6 +20,11 @@ class App extends Component {
     }
   }
   componentDidMount = () => {
+    this.vehiclesFetch();
+    this.logsFetch();
+  }
+
+  vehiclesFetch() {
     fetch(vehiclesURL)
       .then(res => res.json())
       .then(res => {
@@ -27,6 +32,8 @@ class App extends Component {
           vehicles: res
         })
       })
+  }
+  logsFetch() {
     fetch(logURL)
       .then(res => res.json())
       .then(res => {
@@ -47,15 +54,49 @@ class App extends Component {
       selectedCard: card
     });
   }
-  handleVehDelete = (event, id) => {
-    event.preventDefault();
 
-    console.log(id, event.target);
+  urlIdTypeCreate(cardType, id) {
+    if (cardType === "vehicles") {
+      return `${vehiclesURL}/${id}`
+    }
+    else {
+      return `${logURL}/${id}`
+    }
   }
-  handleLogDelete = (event, id) => {
+  currentListType(cardType) {
+    if (cardType === "vehicles") {
+      return this.state.vehicles;
+    }
+    else {
+      return this.state.logs;
+    }
+  }
+  handleDelete = (event, id) => {
     event.preventDefault();
-    console.log(id, event.target);
+    const cardType = event.target.value;
+    const deleteURL = this.urlIdTypeCreate(cardType, id)
+    let currentList = this.currentListType(cardType)
+    let deletedCard = currentList.filter(item => item.id === id)[0]
+
+    fetch(deleteURL, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(this.handleErrors)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        currentList.splice(currentList.indexOf(deletedCard), 1)
+        this.setState({
+          [cardType]: currentList,
+          selectedCard: {}
+        })
+      })
+      .catch(err => {
+        console.error(err)
+      })
   }
+
   handleVehEdit = () => {
 
   }
@@ -78,7 +119,7 @@ class App extends Component {
           <Route path="/Vehicles" component={() => <Vehicles
             vehicles={this.state.vehicles}
             onClickedVeh={this.onClickedVeh}
-            handleDelete={this.handleVehDelete}
+            handleDelete={this.handleDelete}
             onClickedCard={this.onClickedCard}
             selectedCard={this.state.selectedCard}
           />} />
@@ -87,7 +128,7 @@ class App extends Component {
             selectedCard={this.state.selectedCard}
             logList={this.state.logs} />}
             onClickedCard={this.onClickedCard}
-            handleDelete={this.handleLogDelete}
+            handleDelete={this.handleDelete}
           />
         </div>
       </Router>
