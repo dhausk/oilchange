@@ -5,7 +5,7 @@ class updateVeh extends Component {
     return (
       <div className="update-veh" >
         <h4>Update this Vehicle</h4>
-        <form className="form" onSubmit={(event) => this.props.handleEdit(event, this.props.selectedCard.id)}>
+        <form className="form" onSubmit={(event) => this.props.handleEdit(event, this.props.selectedCard.id, "vehicles")}>
           <label name="make">Vehicle Make</label>
           <input type="text" name="make" defaultValue={this.props.selectedCard.make} required ></input>
           <label name="model">Model of Vehicle</label>

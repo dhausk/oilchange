@@ -148,3 +148,13 @@
 .logs-chart{
   width: 50%;
 }
+.add-button{
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 1rem;
+  margin: 0.3rem;
+  width: 100%;
+  background-color:  black;
+}

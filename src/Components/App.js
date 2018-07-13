@@ -93,10 +93,65 @@ class App extends Component {
         console.error(err)
       })
   }
+  buildEditBodyObj(data, type, id) {
+    if (type === "vehicles") {
+      return {
+        "id": id,
+        "make": data.get('make'),
+        "model": data.get('model'),
+        "year": data.get('year'),
+        "notes": data.get('notes')
+      }
+    }
+    else if (type === "logs") {
+      return {
+        "id": id,
+        "veh_id": data.get('make'),
+        "model": data.get('model'),
+        "year": data.get('year'),
+        "notes": data.get('notes')
+      }
 
-  handleEdit = (event) => {
+    }
+
+
+  }
+  handleEdit = (event, id, type) => {
     event.preventDefault()
     console.log(event.target);
+
+    let updateUrl = this.urlIdTypeCreate(type, id)
+    const formData = new FormData(event.target)
+    const dataObj = this.buildEditBodyObj(formData, type, id)
+    console.log(dataObj);
+
+
+    // fetch(updateUrl, {
+    //   method: 'PUT',
+    //   body: JSON.stringify({
+    //     imgUrl: data.get('imgUrl'),
+    //     description: data.get('description'),
+    //     location: data.get('location'),
+    //     lat: parseFloat(data.get('lat')),
+    //     lng: parseFloat(data.get('lng'))
+    //   }),
+    //   headers: { "Content-Type": "application/json" }
+    // })
+    //   .then(this.handleErrors)
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     let currentArtList = this.state.artList
+    //     let artToBeUpdated = currentArtList.filter(art => art.id == res.id)[0]
+    //     currentArtList.splice(currentArtList.indexOf(artToBeUpdated), 1)
+    //     currentArtList.unshift(res)
+    //     this.setState({
+    //       currentArt: res,
+    //       artList: currentArtList
+    //     })
+    //   })
+    //   .catch(err => {
+    //     console.error(err)
+    //   })
 
   }
 
@@ -121,7 +176,9 @@ class App extends Component {
         console.error(err)
       })
   }
-
+  addVehOrLog = () => {
+    this.setState({ selectedCard: {} })
+  }
   render() {
     return (
       <Router>
@@ -132,16 +189,19 @@ class App extends Component {
           <Route path="/Vehicles" component={() => <Vehicles
             vehicles={this.state.vehicles}
             selectedCard={this.state.selectedCard}
+            addVehOrLog={this.addVehOrLog}
             handleAdd={this.handleAdd}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit}
             onClickedCard={this.onClickedCard}
             onClickedVeh={this.onClickedVeh}
+
           />} />
           <Route path="/Log" component={() => <Log
             logList={this.state.logs}
             selectedCard={this.state.selectedCard}
             vehicleSelected={this.state.selectedVehicle}
+            addVehOrLog={this.addVehOrLog}
             handleAdd={this.handleAdd}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit}

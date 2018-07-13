@@ -24,13 +24,14 @@ class CreateLog extends Component {
   }
   render() {
     return (
-      <div className="add-log" onSubmit={this.logCreateSubmit} >
-        <h4> add or edit {this.props.vehicleSelected.model}</h4>
-        <form className="form" onSubmit={this.props.formSubmit}>
-          <label name="maintenance">What maintenance did your perform?</label>
-          <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance} required></input>
+      <div className="add-log" >
+        <h3>Add a log for the Vehicle</h3>
 
-          <label name="cost">how much did this cost?</label>
+        <form className="form" onSubmit={(event) => this.props.handleAdd(event, this.state, "logs")}>
+          <label name="maintenance">What maintenance did your perform?</label>
+          <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance} placeholder="Maintenance" required></input>
+
+          <label name="cost">How much did this cost?</label>
           <input type="number" name="cost" onChange={this.changeHandler} value={this.state.cost} required></input>
 
           <label name="date">When did this maintenance occur?</label>

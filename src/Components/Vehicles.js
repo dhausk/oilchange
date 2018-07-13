@@ -23,6 +23,7 @@ class vehicles extends Component {
       <div className="vehicles">
         <div className="veh-selection" >
           <h2>Select your vehicle</h2>
+          <button className="add-button" onClick={() => { this.props.addVehOrLog() }}>Add a vehicle</button>
           {isLoading}
         </div>
         {addOrEdit}
