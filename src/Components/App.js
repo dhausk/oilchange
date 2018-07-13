@@ -76,8 +76,6 @@ class App extends Component {
     const deleteURL = this.urlIdTypeCreate(cardType, id)
     let currentList = this.currentListType(cardType)
     let deletedCard = currentList.filter(item => item.id === id)[0]
-    console.log(cardType, deletedCard);
-    console.log(currentList, deleteURL);
     fetch(deleteURL, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
@@ -102,9 +100,26 @@ class App extends Component {
 
   }
 
-  handleAdd = (event) => {
-    event.preventDefault()
-    console.log(event.target);
+  handleAdd = (event, state, type) => {
+    event.preventDefault();
+    const addURL = `http://localhost:8080/api/${type}/`;
+    const currentList = this.currentListType(type);
+    fetch(addURL, {
+      method: "POST",
+      body: JSON.stringify(state),
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(this.handleErrors)
+      .then(res => res.json())
+      .then(res => {
+        currentList.unshift(res)
+        this.setState({
+          [type]: currentList
+        })
+      })
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   render() {

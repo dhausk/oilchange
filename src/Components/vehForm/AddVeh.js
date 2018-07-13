@@ -6,8 +6,8 @@ class addVeh extends Component {
     this.state = {
       "make": "",
       "model": "",
-      "year": "",
-      "note": ""
+      "note": "",
+      "year": ""
     }
   }
   changeHandler = (event) => {
@@ -21,7 +21,7 @@ class addVeh extends Component {
     return (
       <div className="update-veh">
         <h4>Add a Vehicle</h4>
-        <form className="form" onSubmit={(event) => this.props.handleAdd(event, this.state)}>
+        <form className="form" onSubmit={(event) => this.props.handleAdd(event, this.state, "vehicles")}>
           <label name="make">Vehicle Make</label>
           <input type="text" name="make" onChange={this.changeHandler} placeholder="Make of the vehicle" value={this.state.make} required ></input>
           <label name="model">Model of Vehicle</label>

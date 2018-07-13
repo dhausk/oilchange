@@ -22,7 +22,7 @@ class UpdateLog extends Component {
     return (
       <div className="Update-log">
         <h4>Update this maintenance service log for the {this.props.vehicleSelected.model}</h4>
-        <form className="form" onSubmit={(event) => this.props.formSubmit(event, this.state, )}>
+        <form className="form" onSubmit={(event) => this.props.formSubmit(event, this.state, "logs")}>
           <label name="maintenance">What maintenance did your perform?</label>
           <input type="text" name="maintenance" onChange={this.changeHandler} defaultValue={this.props.maintenance} required ></input>
           <label name="cost">how much did this cost?</label>
