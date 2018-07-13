@@ -10,7 +10,6 @@ class addVeh extends Component {
       "note": ""
     }
   }
-
   changeHandler = (event) => {
     const key = event.target.name;
     const value = event.target.value;
@@ -18,7 +17,6 @@ class addVeh extends Component {
       [key]: value
     });
   }
-
   render() {
     return (
       <div className="update-veh">
