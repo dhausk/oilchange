@@ -23,7 +23,7 @@ class updateVeh extends Component {
   render() {
     return (
       <div className="update-veh">
-        <h4>Add a Vehicle</h4>
+        <h4>Update this Vehicle</h4>
         <form className="form" onSubmit={(event) => this.props.formSubmit(event, this.state)}>
           <label name="make">Vehicle Make</label>
           <input type="text" name="make" onChange={this.changeHandler} placeholder="Make of the vehicle" required ></input>

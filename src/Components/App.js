@@ -97,12 +97,13 @@ class App extends Component {
       })
   }
 
-  handleEdit = () => {
+  handleEdit = (event) => {
+    console.log(event.target);
 
   }
 
-  handleAdd = () => {
-
+  handleAdd = (event) => {
+    console.log(event.target);
   }
 
   render() {
@@ -118,6 +119,8 @@ class App extends Component {
             handleDelete={this.handleDelete}
             onClickedCard={this.onClickedCard}
             selectedCard={this.state.selectedCard}
+            handleAdd={this.state.handleAdd}
+            handleEdit={this.state.handleEdit}
           />} />
           <Route path="/Log" component={() => <Log
             vehicleSelected={this.state.selectedVehicle}
@@ -125,6 +128,8 @@ class App extends Component {
             logList={this.state.logs}
             onClickedCard={this.onClickedCard}
             handleDelete={this.handleDelete}
+            handleAdd={this.state.handleAdd}
+            handleEdit={this.state.handleEdit}
           />} />
         </div>
       </Router>
