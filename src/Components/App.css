@@ -122,7 +122,13 @@
 .form{
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
+  align-items: center;
+}
+.form input{
+ text-align: center;
+  width: 75%;
 }
 .form-submit{
   cursor: pointer;
@@ -138,4 +144,7 @@
   justify-content: space-evenly;
   text-align: center;
   margin: 1rem;
+}
+.logs-chart{
+  width: 50%;
 }
