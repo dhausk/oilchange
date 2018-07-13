@@ -7,7 +7,7 @@ class UpdateLog extends Component {
       <div className="Update-log">
         <h4>Update this maintenance service log for the {this.props.selectedCard.date}</h4>
 
-        <form className="form" onSubmit={(event) => this.props.handleEdit(event, this.props.selectedCard.id, "logs")}>
+        <form className="form" onSubmit={(event) => this.props.handleEdit(event, this.props.selectedCard, "log")}>
 
           <label name="maintenance">What maintenance did your perform?</label>
           <input type="text" name="maintenance" defaultValue={this.props.selectedCard.maintenance} required ></input>

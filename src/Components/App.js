@@ -93,36 +93,36 @@ class App extends Component {
         console.error(err)
       })
   }
-  buildEditBodyObj(data, type, id) {
+  buildEditBodyObj(data, type, card) {
     if (type === "vehicles") {
       return {
-        "id": id,
+        "id": card.id,
         "make": data.get('make'),
         "model": data.get('model'),
         "year": data.get('year'),
-        "notes": data.get('notes')
+        "note": data.get('note')
       }
     }
     else if (type === "log") {
       return {
-        "id": id,
-        "veh_id": data.get('make'),
-        "model": data.get('model'),
-        "year": data.get('year'),
-        "notes": data.get('notes')
+        "id": card.id,
+        "veh_id": card.veh_id,
+        "maintenance": data.get('maintenance'),
+        "cost": data.get('cost'),
+        "date": data.get('date'),
+        "note": data.get('note')
       }
-
     }
-
-
   }
-  handleEdit = (event, id, type) => {
+  handleEdit = (event, card, type) => {
     event.preventDefault()
-    console.log(event.target);
+    console.log(event.target, type);
+    console.log(card);
 
+    const id = card.id
     let updateUrl = this.urlIdTypeCreate(type, id)
     const formData = new FormData(event.target)
-    const dataObj = this.buildEditBodyObj(formData, type, id)
+    const dataObj = this.buildEditBodyObj(formData, type, card)
     console.log(dataObj);
 
 
