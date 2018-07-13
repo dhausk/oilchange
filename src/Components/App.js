@@ -14,7 +14,7 @@ class App extends Component {
     super(props)
     this.state = {
       vehicles: [],
-      logs: [],
+      log: [],
       selectedVehicle: {},
       selectedCard: {}
     }
@@ -38,7 +38,7 @@ class App extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({
-          logs: res
+          log: res
         })
       })
   }
@@ -66,7 +66,7 @@ class App extends Component {
     if (cardType === "vehicles") {
       return this.state.vehicles;
     }
-    else if (cardType === "logs") {
+    else if (cardType === "log") {
       return this.state.logs;
     }
   }
@@ -116,42 +116,32 @@ class App extends Component {
   }
   handleEdit = (event, card, type) => {
     event.preventDefault()
-    console.log(event.target, type);
-    console.log(card);
-
     const id = card.id
     let updateUrl = this.urlIdTypeCreate(type, id)
     const formData = new FormData(event.target)
     const dataObj = this.buildEditBodyObj(formData, type, card)
     console.log(dataObj);
 
-
-    // fetch(updateUrl, {
-    //   method: 'PUT',
-    //   body: JSON.stringify({
-    //     imgUrl: data.get('imgUrl'),
-    //     description: data.get('description'),
-    //     location: data.get('location'),
-    //     lat: parseFloat(data.get('lat')),
-    //     lng: parseFloat(data.get('lng'))
-    //   }),
-    //   headers: { "Content-Type": "application/json" }
-    // })
-    //   .then(this.handleErrors)
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     let currentArtList = this.state.artList
-    //     let artToBeUpdated = currentArtList.filter(art => art.id == res.id)[0]
-    //     currentArtList.splice(currentArtList.indexOf(artToBeUpdated), 1)
-    //     currentArtList.unshift(res)
-    //     this.setState({
-    //       currentArt: res,
-    //       artList: currentArtList
-    //     })
-    //   })
-    //   .catch(err => {
-    //     console.error(err)
-    //   })
+    fetch(updateUrl, {
+      method: 'PUT',
+      body: JSON.stringify(dataObj),
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(this.handleErrors)
+      .then(res => res.json())
+      .then(res => {
+        let currentList = this.currentListType(type)
+        let postToBeUpdated = currentList.filter(item => item.id === id)[0]
+        currentList.splice(currentList.indexOf(postToBeUpdated), 1)
+        currentList.unshift(res)
+        this.setState({
+          selectedCard: res,
+          [type]: currentList
+        })
+      })
+      .catch(err => {
+        console.error(err)
+      })
 
   }
 
@@ -198,7 +188,7 @@ class App extends Component {
 
           />} />
           <Route path="/Log" component={() => <Log
-            logList={this.state.logs}
+            logList={this.state.log}
             selectedCard={this.state.selectedCard}
             vehicleSelected={this.state.selectedVehicle}
             showAddForm={this.showAddForm}
