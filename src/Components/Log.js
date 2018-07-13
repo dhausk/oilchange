@@ -18,7 +18,7 @@ class Log extends Component {
     });
 
     var vehEdit = this.props.selectedCard.id;
-    var addOrEdit = vehEdit ? <UpdateLog handleEdit={this.props.handleEdit} selectedCard={this.props.selectedCard} /> : <CreateLog handleAdd={this.props.handleAdd} />;
+    var addOrEdit = vehEdit ? <UpdateLog handleEdit={this.props.handleEdit} selectedCard={this.props.selectedCard} /> : <CreateLog handleAdd={this.props.handleAdd} selectedVehicle={this.props.vehicleSelected} />;
 
     return (
       <div className="log">

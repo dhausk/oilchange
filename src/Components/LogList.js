@@ -10,8 +10,8 @@ function LogList(props) {
         <p>Cost: ${props.log.cost}</p>
       </div>
       <div className="card-buttons"></div>
-      <button className="card-button" value="logs" onClick={(event) => props.onClickedCard(props.log)}>Edit</button>
-      <button className="card-button" value="logs" onClick={(event) => { props.handleDelete(event, props.log.id) }}>Delete</button>
+      <button className="card-button" value="log" onClick={(event) => props.onClickedCard(props.log)}>Edit</button>
+      <button className="card-button" value="log" onClick={(event) => { props.handleDelete(event, props.log.id) }}>Delete</button>
     </div>
   );
 }

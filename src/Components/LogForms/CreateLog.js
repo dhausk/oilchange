@@ -4,10 +4,10 @@ class CreateLog extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      "veh_id": 2,
+      "veh_id": this.props.selectedVehicle.id || 0,
       "maintenance": "",
-      "cost": 0,
-      "date": 'yyyy-MM-dd',
+      "cost": "",
+      "date": '',
       "note": ""
     }
   }

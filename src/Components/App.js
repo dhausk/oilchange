@@ -67,7 +67,7 @@ class App extends Component {
       return this.state.vehicles;
     }
     else if (cardType === "log") {
-      return this.state.logs;
+      return this.state.log;
     }
   }
   handleDelete = (event, id) => {
@@ -76,6 +76,7 @@ class App extends Component {
     const deleteURL = this.urlIdTypeCreate(cardType, id)
     let currentList = this.currentListType(cardType)
     let deletedCard = currentList.filter(item => item.id === id)[0]
+
     fetch(deleteURL, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
@@ -108,7 +109,7 @@ class App extends Component {
         "id": card.id,
         "veh_id": card.veh_id,
         "maintenance": data.get('maintenance'),
-        "cost": data.get('cost'),
+        "cost": Number(data.get('cost')),
         "date": data.get('date'),
         "note": data.get('note')
       }
@@ -120,8 +121,6 @@ class App extends Component {
     let updateUrl = this.urlIdTypeCreate(type, id)
     const formData = new FormData(event.target)
     const dataObj = this.buildEditBodyObj(formData, type, card)
-    console.log(dataObj);
-
     fetch(updateUrl, {
       method: 'PUT',
       body: JSON.stringify(dataObj),
@@ -142,21 +141,37 @@ class App extends Component {
       .catch(err => {
         console.error(err)
       })
-
   }
-
+  addBodyObjectBuilder(state, type) {
+    if (type === "log") {
+      return {
+        "veh_id": state.veh_id,
+        "maintenance": state.maintenance,
+        "cost": Number(state.cost),
+        "date": state.date,
+        "note": state.note
+      }
+    }
+    else {
+      return state
+    }
+  }
   handleAdd = (event, state, type) => {
     event.preventDefault();
     const addURL = `http://localhost:8080/api/${type}/`;
-    const currentList = this.currentListType(type);
+    const addBodyObj = this.addBodyObjectBuilder(state, type)
+    console.log(addBodyObj);
+
     fetch(addURL, {
       method: "POST",
-      body: JSON.stringify(state),
+      body: JSON.stringify(addBodyObj),
       headers: { 'Content-Type': 'application/json' }
     })
       .then(this.handleErrors)
       .then(res => res.json())
       .then(res => {
+        console.log(res);
+        const currentList = this.currentListType(type);
         currentList.unshift(res)
         this.setState({
           [type]: currentList
