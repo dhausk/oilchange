@@ -1,36 +1,26 @@
 import React, { Component } from 'react';
 
 class UpdateLog extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     "veh_id": 1,
-  //     "maintenance": "",
-  //     "cost": 0,
-  //     "date": 'YYYY-MM-DD',
-  //     "note": ""
-  //   }
-  // }
-  // changeHandler = (event) => {
-  //   const key = event.target.name
-  //   const value = event.target.value
-  //   this.setState({
-  //     [key]: value
-  //   })
-  // }
+
   render() {
     return (
       <div className="Update-log">
-        <h4>Update this maintenance service log for the {this.props.vehicleSelected.model}</h4>
-        <form className="form" onSubmit={(event) => this.props.formSubmit(event, this.state, "logs")}>
+        <h4>Update this maintenance service log for the {this.props.selectedCard.date}</h4>
+
+        <form className="form" onSubmit={(event) => this.props.handleEdit(event, this.props.selectedCard.id, "logs")}>
+
           <label name="maintenance">What maintenance did your perform?</label>
-          <input type="text" name="maintenance" onChange={this.changeHandler} defaultValue={this.props.maintenance} required ></input>
-          <label name="cost">how much did this cost?</label>
-          <input type="text" name="cost" onChange={this.changeHandler} defaultValue={this.props.cost} required ></input>
+          <input type="text" name="maintenance" defaultValue={this.props.selectedCard.maintenance} required ></input>
+
+          <label name="cost">How much did this cost?</label>
+          <input type="text" name="cost" defaultValue={this.props.selectedCard.cost} required ></input>
+
           <label name="date">When did this maintenance occur?</label>
-          <input type="date" name="date" onChange={this.changeHandler} defaultValue={this.props.date} required ></input>
+          <input type="date" name="date" defaultValue={this.props.selectedCard.date} required ></input>
+
           <label name="note">Any additional comments or notes?</label>
-          <textarea name="note" onChange={this.changeHandler} defaultValue={this.props.note} ></textarea>
+          <textarea name="note" defaultValue={this.props.selectedCard.note} ></textarea>
+
           <button className="form-submit">Add Log</button>
         </form>
       </div>

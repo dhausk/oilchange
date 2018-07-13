@@ -27,7 +27,7 @@ class CreateLog extends Component {
       <div className="add-log" >
         <h3>Add a log for the Vehicle</h3>
 
-        <form className="form" onSubmit={(event) => this.props.handleAdd(event, this.state, "logs")}>
+        <form className="form" onSubmit={(event) => this.props.handleAdd(event, this.state, "log")}>
           <label name="maintenance">What maintenance did your perform?</label>
           <input type="text" name="maintenance" onChange={this.changeHandler} value={this.state.maintenance} placeholder="Maintenance" required></input>
 

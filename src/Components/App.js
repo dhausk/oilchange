@@ -58,7 +58,7 @@ class App extends Component {
     if (cardType === "vehicles") {
       return `${vehiclesURL}/${id}`
     }
-    else if (cardType === "logs") {
+    else if (cardType === "log") {
       return `${logURL}/${id}`
     }
   }
@@ -103,7 +103,7 @@ class App extends Component {
         "notes": data.get('notes')
       }
     }
-    else if (type === "logs") {
+    else if (type === "log") {
       return {
         "id": id,
         "veh_id": data.get('make'),
