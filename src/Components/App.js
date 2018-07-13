@@ -97,11 +97,13 @@ class App extends Component {
   }
 
   handleEdit = (event) => {
+    event.preventDefault()
     console.log(event.target);
 
   }
 
   handleAdd = (event) => {
+    event.preventDefault()
     console.log(event.target);
   }
 
@@ -114,21 +116,21 @@ class App extends Component {
           <Route path="/About" component={About} />
           <Route path="/Vehicles" component={() => <Vehicles
             vehicles={this.state.vehicles}
-            onClickedVeh={this.onClickedVeh}
-            handleDelete={this.handleDelete}
-            onClickedCard={this.onClickedCard}
             selectedCard={this.state.selectedCard}
-            handleAdd={this.state.handleAdd}
-            handleEdit={this.state.handleEdit}
+            handleAdd={this.handleAdd}
+            handleDelete={this.handleDelete}
+            handleEdit={this.handleEdit}
+            onClickedCard={this.onClickedCard}
+            onClickedVeh={this.onClickedVeh}
           />} />
           <Route path="/Log" component={() => <Log
-            vehicleSelected={this.state.selectedVehicle}
-            selectedCard={this.state.selectedCard}
             logList={this.state.logs}
-            onClickedCard={this.onClickedCard}
+            selectedCard={this.state.selectedCard}
+            vehicleSelected={this.state.selectedVehicle}
+            handleAdd={this.handleAdd}
             handleDelete={this.handleDelete}
-            handleAdd={this.state.handleAdd}
-            handleEdit={this.state.handleEdit}
+            handleEdit={this.handleEdit}
+            onClickedCard={this.onClickedCard}
           />} />
         </div>
       </Router>
