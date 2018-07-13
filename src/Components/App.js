@@ -135,7 +135,7 @@ class App extends Component {
         currentList.splice(currentList.indexOf(postToBeUpdated), 1)
         currentList.unshift(res)
         this.setState({
-          selectedCard: res,
+          selectedCard: {},
           [type]: currentList
         })
       })
