@@ -49,7 +49,6 @@ class App extends Component {
     })
   }
   onClickedCard = (card) => {
-    console.log(card);
     this.setState({
       selectedCard: card
     });
