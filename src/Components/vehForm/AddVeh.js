@@ -10,12 +10,13 @@ class addVeh extends Component {
       "note": ""
     }
   }
+
   changeHandler = (event) => {
-    const key = event.target.name
-    const value = event.target.value
+    const key = event.target.name;
+    const value = event.target.value;
     this.setState({
       [key]: value
-    })
+    });
   }
 
   render() {
@@ -35,7 +36,7 @@ class addVeh extends Component {
         </form>
       </div>
     );
-  }
+  };
 }
 
 export default addVeh;
