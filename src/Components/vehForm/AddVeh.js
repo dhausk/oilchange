@@ -29,7 +29,7 @@ class addVeh extends Component {
           <label name="model">Model of Vehicle</label>
           <input type="text" name="model" onChange={this.changeHandler} placeholder="Model of vehicle" value={this.state.model} required ></input>
           <label name="year">Year of Manufacture</label>
-          <input type="text" name="year" onChange={this.changeHandler} placeholder="YYYY" minLength="4" value={this.state.year} maxLength="4" ></input>
+          <input type="text" name="year" onChange={this.changeHandler} placeholder="YYYY" minLength="4" maxLength="4" value={this.state.year} required ></input>
           <label name="note">Any additional comments or notes</label>
           <textarea name="note" onChange={this.changeHandler} placeholder="Add any additional info like transmission type, engine size, sedan or coupe, color." value={this.state.note}></textarea>
           <button className="form-submit"> Submit</button>
