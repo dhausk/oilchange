@@ -176,7 +176,7 @@ class App extends Component {
         console.error(err)
       })
   }
-  addVehOrLog = () => {
+  showAddForm = () => {
     this.setState({ selectedCard: {} })
   }
   render() {
@@ -189,7 +189,7 @@ class App extends Component {
           <Route path="/Vehicles" component={() => <Vehicles
             vehicles={this.state.vehicles}
             selectedCard={this.state.selectedCard}
-            addVehOrLog={this.addVehOrLog}
+            showAddForm={this.showAddForm}
             handleAdd={this.handleAdd}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit}
@@ -201,7 +201,7 @@ class App extends Component {
             logList={this.state.logs}
             selectedCard={this.state.selectedCard}
             vehicleSelected={this.state.selectedVehicle}
-            addVehOrLog={this.addVehOrLog}
+            showAddForm={this.showAddForm}
             handleAdd={this.handleAdd}
             handleDelete={this.handleDelete}
             handleEdit={this.handleEdit}

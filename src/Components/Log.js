@@ -24,7 +24,7 @@ class Log extends Component {
         <div className="logs-chart">
           <h2>Maintenance log of your {this.props.vehicleSelected.make} {this.props.vehicleSelected.model}</h2>
           <Chart logs={list} />
-          <button className="add-button" onClick={() => { this.props.addVehOrLog() }}>Add a Log</button>
+          <button className="add-button" onClick={() => { this.props.showAddForm() }}>Add a Log</button>
           {logs}
         </div>
         <div className="log-form">
