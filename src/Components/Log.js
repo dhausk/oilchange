@@ -11,8 +11,9 @@ class Log extends Component {
     const logs = list.map(log => {
       return (<LogList className="LogList"
         key={log.id} log={log}
-        handleDelete={this.props.handleDelete}
-        onClickedCard={this.props.onClickedCard} />
+        onClickedVeh={this.props.onClickedVeh}
+        onClickedCard={this.props.onClickedCard}
+        handleDelete={this.props.handleDelete} />
       )
     });
 
