@@ -19,7 +19,7 @@ class addVeh extends Component {
   }
   render() {
     return (
-      <div className="update-veh">
+      <div className="add-veh">
         <h4>Add a Vehicle</h4>
         <form className="form" onSubmit={(event) => this.props.handleAdd(event, this.state, "vehicles")}>
           <label name="make">Vehicle Make</label>

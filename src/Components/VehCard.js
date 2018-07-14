@@ -5,7 +5,7 @@ function VehCard(props) {
   return (
     <div className="card-div" id={props.veh.id} >
       <div className="card-deets">
-        <p className="make" >Make : {props.veh.make} </p>
+        <p className="make" >Make: {props.veh.make}</p>
         <p className="model" >Model: {props.veh.model}</p>
         <p className="year" >Year: {props.veh.year}</p>
         <p className="details" >Details: {props.veh.note}</p>
