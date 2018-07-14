@@ -35,5 +35,6 @@ describe('Vehicle Page testing', () => {
       cy.get('.model').should('have.text', 'Model: S2000');
       cy.get('.card-button').eq(2).click();
     })
+    cy.get('.card-div').first().find('.make').should('not.have.text', 'Make: Honda');
   });
 });
