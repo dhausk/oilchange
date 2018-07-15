@@ -15,4 +15,5 @@ function LogList(props) {
     </div>
   );
 }
+
 export default LogList;

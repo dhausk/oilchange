@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import me from '../assets/Me.JPG'
+import me from '../assets/Me.JPG';
 function About(params) {
   return (
     <section className="about" >

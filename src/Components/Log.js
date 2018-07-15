@@ -14,13 +14,13 @@ class Log extends Component {
         onClickedVeh={this.props.onClickedVeh}
         onClickedCard={this.props.onClickedCard}
         handleDelete={this.props.handleDelete} />
-      )
+      );
     });
-    const pleaseAddLogs = (<div><h2>You don't have an logs for this vehicle.</h2><p>Please create one in the add form </p></div>)
+    const pleaseAddLogs = (<div><h2>You don't have an logs for this vehicle.</h2><p>Please create one in the add form </p></div>);
     let vehEdit = this.props.selectedCard.id;
-    const ChartAdd = <React.Fragment><Chart logs={list} /> <button className="add-button" onClick={() => { this.props.showAddForm() }}>Add a Log</button></React.Fragment>
+    const ChartAdd = <React.Fragment><Chart logs={list} /> <button className="add-button" onClick={() => { this.props.showAddForm() }}>Add a Log</button></React.Fragment>;
     let addOrEdit = vehEdit ? <UpdateLog handleEdit={this.props.handleEdit} selectedCard={this.props.selectedCard} /> : <CreateLog handleAdd={this.props.handleAdd} selectedVehicle={this.props.vehicleSelected} />;
-    let noLogs = (list.length === 0) ? pleaseAddLogs : ChartAdd
+    let noLogs = (list.length === 0) ? pleaseAddLogs : ChartAdd;
     return (
       <div className="log">
         <div className="logs-chart">

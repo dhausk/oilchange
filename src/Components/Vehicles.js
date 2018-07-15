@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import VehCard from './VehCard';
-import AddVeh from './VehForm/AddVeh';
 import UpdateVeh from './VehForm/UpdateVeh';
+import AddVeh from './VehForm/AddVeh';
 
 class vehicles extends Component {
   render() {
-    const listLoaded = this.props.vehicles
+    const listLoaded = this.props.vehicles;
     const vehicleForm = listLoaded.map(veh => {
       return (<VehCard
         key={veh.id}
@@ -13,10 +13,9 @@ class vehicles extends Component {
         onClickedVeh={this.props.onClickedVeh}
         onClickedCard={this.props.onClickedCard}
         handleDelete={this.props.handleDelete}
-      />)
-    })
-
-    var isLoading = listLoaded ? vehicleForm : <h3>Loading vehicle selections</h3>
+      />);
+    });
+    var isLoading = listLoaded ? vehicleForm : <h3>Loading vehicle selections</h3>;
     var vehEdit = this.props.selectedCard.id;
     var addOrEdit = vehEdit ? <UpdateVeh handleEdit={this.props.handleEdit} selectedCard={this.props.selectedCard} /> : <AddVeh handleAdd={this.props.handleAdd} />;
     return (
@@ -30,6 +29,6 @@ class vehicles extends Component {
       </div>
     );
   }
-};
+}
 
 export default vehicles;

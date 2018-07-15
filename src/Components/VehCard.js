@@ -20,7 +20,7 @@ function VehCard(props) {
         <button className="card-button" value="vehicles" onClick={(event) => props.handleDelete(event, props.veh.id)}>Delete</button>
       </div>
     </div>
-  )
+  );
 }
 
 export default VehCard;

@@ -3,7 +3,7 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Toolti
 
 class Chart extends Component {
   render() {
-    const data = this.props.logs
+    const data = this.props.logs;
     return (
       <ResponsiveContainer width="100%" height="25%">
         <BarChart data={data}

@@ -15,7 +15,7 @@ function Splash() {
       Just fill out a log entry and we will keep a record for you.</p>
       <Link to="/Vehicles"><button>Let's do some Work</button></Link>
     </section>
-  )
+  );
 }
 
 export default Splash;

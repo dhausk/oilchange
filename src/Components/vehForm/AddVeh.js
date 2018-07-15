@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 
 class AddVeh extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       "make": "",
       "model": "",
       "note": "",
       "year": ""
-    }
-  }
+    };
+  };
   changeHandler = (event) => {
     const key = event.target.name;
     const value = event.target.value;
     this.setState({
       [key]: value
     });
-  }
+  };
   render() {
     return (
       <div className="add-veh">
@@ -34,7 +34,7 @@ class AddVeh extends Component {
         </form>
       </div>
     );
-  };
-}
+  }
+};
 
 export default AddVeh;
