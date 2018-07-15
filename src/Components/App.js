@@ -6,8 +6,8 @@ import Splash from "./Splash";
 import About from "./About";
 import Vehicles from './Vehicles';
 import Log from './Log';
-const vehiclesURL = "http://localhost:8080/api/vehicles";
-const logURL = "http://localhost:8080/api/log";
+const vehiclesURL = "https://oil-change-back.herokuapp.com/api/vehicles";
+const logURL = "https://oil-change-back.herokuapp.com/api/log";
 
 class App extends Component {
   constructor(props) {
