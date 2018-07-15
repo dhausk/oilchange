@@ -18,10 +18,6 @@ class CreateLog extends Component {
       [key]: value
     })
   }
-  logCreateSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state);
-  }
   render() {
     return (
       <div className="add-log" >
