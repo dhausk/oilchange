@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import VehCard from './VehCard';
-import UpdateVeh from './VehForm/UpdateVeh';
-import AddVeh from './VehForm/AddVeh';
+import UpdateVeh from './UpdateVeh';
+import AddVeh from './AddVeh';
 
 class vehicles extends Component {
   render() {
