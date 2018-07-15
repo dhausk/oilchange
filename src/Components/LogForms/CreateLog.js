@@ -35,7 +35,7 @@ class CreateLog extends Component {
           <input type="number" name="cost" onChange={this.changeHandler} value={this.state.cost} required></input>
 
           <label name="date">When did this maintenance occur?</label>
-          <input type="date" name="date" onChange={this.changeHandler} value={this.state.date} required></input>
+          <input type="date" name="date" onChange={this.changeHandler} value={this.state.date} ></input>
 
           <label name="note">Any additional comments or notes?</label>
           <textarea name="note" onChange={this.changeHandler} value={this.state.note}></textarea>
