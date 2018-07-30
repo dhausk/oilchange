@@ -19,8 +19,8 @@
 * npm install  
 * npm start
 
-## OUR PUBLIC LICENSE
-### Copyright (C) 2018 Urban Canvas llc
+## MIT LICENSE 
+### Copyright (C) 2018 Oil Change
 
 ## TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
