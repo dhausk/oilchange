@@ -28,3 +28,5 @@
 
 * If you use this just credit me and if you make a lot of money, share the wealth!
 
+## Oil Change was created by Derek Hassick, you can contact me directly at derek.hassick@gmail.com or on [linkedIn](www.linkedin.com/in/derek-hassick).
+
