@@ -66,6 +66,7 @@
 
 .about-me{
   display: flex;
+  flex-wrap: wrap;
   font-size: 1.5rem;
 }
 .about-me p {
