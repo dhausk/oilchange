@@ -17,7 +17,7 @@
 #### To install locally make sure the the API server is running and that cors and fetch request urls have been updated to match your local environment then just:
 
 * fork the repository
-* clone or Download
+* clone or download
 * npm install  
 * npm start
 
