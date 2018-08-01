@@ -158,7 +158,7 @@ class App extends Component {
   }
   handleAdd = (event, state, type) => {
     event.preventDefault();
-    const addURL = `http://localhost:8080/api/${type}/`;
+    const addURL = `https://oil-change-back.herokuapp.com/api/${type}/`;
     const addBodyObj = this.addBodyObjectBuilder(state, type);
     fetch(addURL, {
       method: "POST",
