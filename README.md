@@ -10,7 +10,7 @@
 ### You can find Oil Change deployed [here](https://oilchange.herokuapp.com).   
 
 ## Technology used in Oil Change
-#### Oil Change is a front end React App and on the server side was built with Node.js, Express, and Postgresql.You will find the Github repository for the server side of Oil Change [here](https://github.com/dhausk/backendOilChange).
+#### Oil Change is built with React.JS and the server was built using Node.js, Express, and Postgresql. You will find the Github repository for the server side of Oil Change [here](https://github.com/dhausk/backendOilChange).
 
 ## Want to improve Oil Change?
 
