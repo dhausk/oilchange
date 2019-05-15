@@ -39,21 +39,23 @@ class App extends Component {
       .then(res => {
         this.setState({
           log: res
-        });
+        });       
       });
   }
+  // selecting Veh
   onClickedVeh = (id) => {
     let vehicle = this.state.vehicles.find(veh => veh.id === id);
     this.setState({
       selectedVehicle: vehicle
     });
   }
+  // selecting card
   onClickedCard = (card) => {
     this.setState({
       selectedCard: card
     });
   }
-
+// creating Veh or Log ID
   urlIdTypeCreate(cardType, id) {
     if (cardType === "vehicles") {
       return `${vehiclesURL}/${id}`
@@ -70,6 +72,7 @@ class App extends Component {
       return this.state.log;
     };
   }
+  // Deleting log or veh
   handleDelete = (event, id) => {
     event.preventDefault();
     const cardType = event.target.value;
